@@ -112,15 +112,26 @@ class JsonIO(IO):
         objects = json_data.get("objects") or []
         relations = json_data.get("relations") or []
 
-        self.add_types(types)
 
-        db_objects, mapping = self.add_objects(objects)
-        self.add_relations(relations, mapping)
+        print self.mapper.session
 
-        for obj in db_objects:
-            self.mapper.save(obj)
+        transaction = self.mapper.session.begin(subtransactions=True)
 
-        return db_objects
+        try:
+            self.add_types(types)
+
+            db_objects, mapping = self.add_objects(objects)
+            self.add_relations(relations, mapping)
+
+            for obj in db_objects:
+                self.mapper.save(obj)
+
+            transaction.commit()
+
+            return db_objects
+        except:
+            transaction.rollback()
+            raise
 
     def write_string(self, objs):
         json_data = self.write_json(objs)
@@ -168,11 +179,15 @@ class JsonIO(IO):
 
             visited_objs.add(obj)
 
-        objects = [{
-            "type": obj.type,
-            "parameters": dict(obj.json_params)
+        objects = []
+        for obj in visited_objs:
+            json_obj = {
+                "type": obj.type,
+                "parameters": dict(obj.json_params)
+            }
+            objects.append(json_obj)
 
-        } for obj in visited_objs]
+
 
         return {
             "types": types,

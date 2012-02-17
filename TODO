@@ -21,3 +21,14 @@ Kommentarfeld auf Entity-Ebene
 
 Rewrite param_filter: Return the elements which could not be filtered and which need to be considered afterwards.
 
+
+id als parameter erlauben
+
+besseres Connections object
+
+>>> obj.context
+{"observed by": [],
+ "visitor: [V]
+ }
+
+

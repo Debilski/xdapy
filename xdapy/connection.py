@@ -35,7 +35,7 @@ class AutoSession(object):
         """
         Calls `self.session.begin()` and returns the session object.
         """
-        self.session.begin()
+        self.session.begin(subtransactions=True)
         # We are in autocommit mode. If we do not explicitly begin a session
         # we must flush afterwards because we cannot be sure WHEN the session
         # is really committed.

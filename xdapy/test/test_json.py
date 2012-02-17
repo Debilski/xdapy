@@ -7,6 +7,10 @@ from xdapy import Connection, Mapper
 from xdapy.io import JsonIO
 from xdapy.errors import InvalidInputError
 
+from xdapy.test import load_data
+
+print load_data('data.txt')
+
 class TestJson(unittest.TestCase):
     def setUp(self):
         """Create test database in memory"""

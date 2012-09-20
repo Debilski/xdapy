@@ -4,13 +4,16 @@
 
 Created on Jul 30, 2009
     levenshtein
-   
+
 """
-# alphabetical order by last name, please
-import copy, uuid, hashlib
+
+__docformat__ = "restructuredtext"
 
 __authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>',
                '"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
+
+
+import copy, uuid, hashlib
 
 def check_superfluous_keys(adict, valid_keys):
     """ Returns the set difference between the keys

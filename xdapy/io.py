@@ -8,7 +8,9 @@ import errno
 
 __docformat__ = "restructuredtext"
 
-__authors__ = ['"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
+__authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>',
+               '"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
+
 
 class UnregisteredTypesError:
     """Raised when there are types in the XML file which have not been imported / registered with mapper"""

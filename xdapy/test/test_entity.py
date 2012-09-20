@@ -2,10 +2,7 @@
 
 """Entity basic tests."""
 
-# alphabetical order by last name, please
 from sqlalchemy.exc import IntegrityError
-
-__authors__ = ['"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
 
 from xdapy import Connection, Mapper, Entity
 from xdapy.structures import create_entity, BaseEntity

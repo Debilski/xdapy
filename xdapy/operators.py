@@ -14,7 +14,9 @@ restricts the result to all Observers with `oberserver.params["age"] > 20`.
 
 __docformat__ = "restructuredtext"
 
-__authors__ = ['"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
+__authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>',
+               '"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
+
 
 from sqlalchemy import and_
 

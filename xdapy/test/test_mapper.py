@@ -23,8 +23,6 @@ IntegrityError: (IntegrityError) duplicate key value violates unique constraint 
  'INSERT INTO stringparameters (id, name, value) VALUES (%(id)s, %(name)s, %(value)s)' {'id': 4L, 'value': 'John Doe', 'name': 'experimenter'}
 
 """
-__authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>']
-
 
 class Experiment(Entity):
     declared_params = {

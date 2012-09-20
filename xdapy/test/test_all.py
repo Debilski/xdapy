@@ -11,8 +11,6 @@ contain a brief description of exported classes and functions.
     functionBar(): One line summary.
 
 """
-# alphabetical order by last name, please
-__authors__ = ['"hannah" <hannah.dold@mailbox.tu-berlin.de>']
 
 from pickle import dumps
 from random import randint

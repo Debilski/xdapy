@@ -10,7 +10,6 @@ import xdapy
 from xdapy.data import DataChunks, Data
 from xdapy.parameters import StringParameter
 
-__authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>']
 """TODO: Load image into testSetData"""
 
 from sqlalchemy.orm.session import Session

@@ -3,7 +3,11 @@
 """Contains decorator classes
 
 """
-__authors__ = ['"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
+
+__docformat__ = "restructuredtext"
+
+__authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>',
+               '"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
 
 def autoappend(a_list):
     """ Decorator which automatically appends the decorated class or method to a_list.

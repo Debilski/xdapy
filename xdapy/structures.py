@@ -342,7 +342,7 @@ class Entity(BaseEntity):
         self._set_items_from_arguments(kwargs)
 
     _params = relationship(Parameter,
-        collection_class=column_mapped_collection(Parameter.name), # FIXME ???
+        collection_class=column_mapped_collection(Parameter.name),
         cascade="all, delete-orphan")
 
     # one to many BaseEntity->Data

@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 
-"""Entity basic tests."""
+import unittest
 
 from sqlalchemy.exc import IntegrityError
 
 from xdapy import Connection, Mapper, Entity
 from xdapy.structures import create_entity, BaseEntity
 from xdapy.errors import EntityDefinitionError
-import unittest
-
 
 declared_params = {
                 'project': 'string',

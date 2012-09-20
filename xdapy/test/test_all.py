@@ -1,23 +1,9 @@
 # -*- coding: utf-8 -*-
 
-"""A one line summary of the module or script, terminated by a period.
-
-Created on Aug 31, 2009
-Leave one blank line.  The rest of this __doc__ string should contain an
-overall description of the module or script.  Optionally, it may also
-contain a brief description of exported classes and functions.
-
-    ClassFoo: One line summary.
-    functionBar(): One line summary.
-
-"""
-
-from pickle import dumps
-from random import randint
-from xdapy import Connection, Mapper, Entity
-from xdapy.structures import BaseEntity, Data, Context
-from xdapy.parameters import StringParameter
 import unittest
+from random import randint
+
+from xdapy import Connection, Mapper, Entity
 
 class Experiment(Entity):
     declared_params = {

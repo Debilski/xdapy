@@ -1,28 +1,18 @@
 # -*- coding: utf-8 -*-
 
-"""Unittest for  proxy
-
-Created on Jun 17, 2009
-"""
+import unittest
 import operator
+import datetime
+
 from sqlalchemy.exc import CircularDependencyError, InvalidRequestError
 from sqlalchemy.orm.exc import NoResultFound, DetachedInstanceError
+
 from xdapy import Connection, Mapper, Entity
 from xdapy.structures import Context, create_entity
 from xdapy.errors import InsertionError
 from xdapy.operators import gt, lt, eq, between, ge
-
-import unittest
-import datetime
 from xdapy.utils.algorithms import listequal
 
-"""
-TODO: Real test for create_tables
-As of Juli 7, 2010: 4Errors
-IntegrityError: (IntegrityError) duplicate key value violates unique constraint "stringparameters_pkey"
- 'INSERT INTO stringparameters (id, name, value) VALUES (%(id)s, %(name)s, %(value)s)' {'id': 4L, 'value': 'John Doe', 'name': 'experimenter'}
-
-"""
 
 class Experiment(Entity):
     declared_params = {

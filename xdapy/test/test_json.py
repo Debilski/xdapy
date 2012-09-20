@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import unittest
+import os
 import datetime
 import json
 import tempfile
-import unittest
-import os
+
 from sqlalchemy.exc import IntegrityError
 
 from xdapy import Connection, Mapper

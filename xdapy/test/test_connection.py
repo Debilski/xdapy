@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import unittest
+
 from xdapy import Connection
 from xdapy.errors import DatabaseError
-import unittest
 
 class TestConnectionFailsOnNonemptyDatabase(unittest.TestCase):
     def setUp(self):

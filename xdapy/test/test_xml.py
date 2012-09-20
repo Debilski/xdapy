@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import unittest
+
 from xdapy import Connection, Mapper, Entity
 from xdapy.errors import AmbiguousObjectError, InvalidInputError
 from xdapy.io import XmlIO, UnregisteredTypesError
 from xdapy.utils.decorators import autoappend
-import unittest
 
 objects = []
 

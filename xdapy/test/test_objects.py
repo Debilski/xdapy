@@ -1,20 +1,14 @@
 # -*- coding: utf-8 -*-
 
-"""Unittest for objects
-
-Created on Jun 17, 2009
-"""
-from datetime import date, time, datetime
+import unittest
 import operator
+from datetime import date, time, datetime
+
 import xdapy
+from xdapy import Connection, Mapper, Entity
 from xdapy.data import DataChunks, Data
 from xdapy.parameters import StringParameter
-
-"""TODO: Load image into testSetData"""
-
-from xdapy import Connection, Mapper, Entity
 from xdapy.errors import MissingSessionError
-import unittest
 
 
 class Experiment(Entity):

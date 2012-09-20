@@ -457,26 +457,33 @@ class Entity(BaseEntity):
 
     def info(self):
         """Prints information about the entity."""
-        print str(self)
-        parents = self.ancestors()
-        print parents
-        print "has", len(self.children), "children and", len(self.siblings()), "siblings"
+        out = ("{self}\n"
+        "{parents}\n"
+        "has {num_children} children and {num_siblings} siblings").format(
+            self=str(self),
+            parents=str(self.ancestors()),
+            num_children=len(self.children),
+            num_siblings=len(self.siblings())
+        )
+        return out
 
-    def print_tree(self):
+    def tree(self):
         """Prints a graphical representation of the entity and its parents and grand-parents."""
+        out = ""
         parents = self.ancestors()
         for p in reversed(parents):
-            print "+-", p
+            out += "+- {p}\n".format(p=str(p))
             for c in p.holds_context:
-                print "|", "+-", "has a", c.connection_type, c.attachment
+                out += "| +- has a {conn_type} {attachment}\n".format(conn_type=str(c.connection_type), attachment=str(c.attachment))
             for c in p.attached_by:
-                print "|", "+-", "belongs to", c.holder
-            print "|"
-        print "x-", self
+                out += "| +- belongs to {holder}\n".format(holder=str(c.holder))
+            out += "|\n"
+        out += "x- {self}\n".format(self=str(self))
         for c in self.holds_context:
-            print " ", "+-", "has a", c.connection_type, c.attachment
+            out += "  +- has a {conn_type} {attachment}\n".format(conn_type=str(c.connection_type), attachment=str(c.attachment))
         for c in self.attached_by:
-            print " ", "+-", "belongs to", c.holder
+            out += "  +- belongs to {holder}\n".format(holder=str(c.holder))
+        return out
 
     def attach(self, connection_type, connection_object):
         """ Attaches an entity to this entity’s context dict.

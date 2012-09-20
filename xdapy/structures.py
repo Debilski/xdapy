@@ -2,9 +2,6 @@
 
 """
 Contains the classes which are used to store the Entity meta data.
-
-**TODO** Figure out what to do with global variable base
-**TODO** Make Data truncation an error
 """
 
 __docformat__ = "restructuredtext"

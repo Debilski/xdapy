@@ -68,7 +68,7 @@ class DataChunks(Base):
     @chunk.setter
     def chunk(self, chunk):
         # we also set the _length here
-        if not isinstance(chunk, basestring): # TODO what about real binary?
+        if not isinstance(chunk, basestring):
             raise ValueError("Data must be a string")
         self._chunk = chunk
         self._length = len(chunk)

@@ -59,7 +59,6 @@ def eq(v):
 
     ``eq(v)(t) == (v == t)``
     """
-
     return lambda type: type == v
 
 def like(v):
@@ -67,8 +66,7 @@ def like(v):
 
     ``like(v)(t) == t.like(v)``
     """
-
-    return lambda type: type.like(v) # TODO or the other way round?
+    return lambda type: type.like(v) # or the other way round?
 
 
 

@@ -23,13 +23,6 @@ from sqlalchemy.sql import or_, and_
 import logging
 logger = logging.getLogger(__name__)
 
-"""
-TODO: Load: what happens if more attributes given as saved in database
-TODO: Save: what happens if similar object with more or less but otherwise the same
-        attributes exists in the database
-TODO: Error if the committing fails
-"""
-
 class Mapper(object):
     """ Handles database access and sessions
 
@@ -244,7 +237,6 @@ class Mapper(object):
 
     def _mk_entity_filter(self, entity, filter=None):
         """ Returns the appropriate entity class, and a filter dict."""
-        # TODO Rename this function
         if filter is None:
             filter = {}
 

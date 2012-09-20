@@ -12,8 +12,6 @@ from xdapy.parameters import StringParameter
 
 """TODO: Load image into testSetData"""
 
-from sqlalchemy.orm.session import Session
-
 from xdapy import Connection, Mapper, Entity
 from xdapy.errors import MissingSessionError
 import unittest
@@ -62,13 +60,11 @@ class TestObjectDict(unittest.TestCase):
         exp.params['project'] = "P"
         exp.params['experimenter'] = "E"
 
-        obj_session = Session.object_session(exp)
-        self.assertTrue(obj_session is None)
+        self.assertRaises(MissingSessionError, exp._session)
 
         self.m.save(exp)
 
-        obj_session = Session.object_session(exp)
-        self.assertEqual(obj_session, self.m.session)
+        self.assertEqual(exp._session(), self.m.session)
         self.assertFalse(self.m.session.is_modified(exp))
         self.assertFalse(exp in self.m.session.dirty)
 

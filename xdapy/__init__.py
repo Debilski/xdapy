@@ -3,8 +3,7 @@
 """
 **xdapy**
 
-Main module
-
+A python database wrapper.
 
 .. note::
     When the `xdapy` module is imported, an instance of `sqlalchemy.ext.declarative.declarative_base`

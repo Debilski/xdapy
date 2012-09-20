@@ -10,6 +10,7 @@ __authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>',
                '"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
 
 from datetime import date, time, datetime
+
 from sqlalchemy import Sequence, Column, ForeignKey, \
      String, Integer, Float, Date, Time, DateTime, Boolean
 from sqlalchemy.orm import validates

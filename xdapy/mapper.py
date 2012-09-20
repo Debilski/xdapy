@@ -5,20 +5,21 @@ This module provides the code to access a database on an abstract level.
 
 Created on Jun 17, 2009
 """
-import itertools
 
 __docformat__ = "restructuredtext"
 
 __authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>',
                '"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
 
+import itertools
+
+from sqlalchemy.sql import or_, and_
+
 from xdapy.connection import Connection
 from xdapy.structures import ParameterDeclaration, BaseEntity, Entity, calculate_polymorphic_name, create_entity
 from xdapy.parameters import StringParameter, DateParameter, parameter_for_type
 from xdapy.errors import StringConversionError, FilterError
 from xdapy.find import SearchProxy
-
-from sqlalchemy.sql import or_, and_
 
 import logging
 logger = logging.getLogger(__name__)

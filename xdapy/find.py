@@ -11,7 +11,6 @@ __authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>',
                '"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
 
 
-from xdapy.errors import SearchError
 from xdapy.structures import Entity
 
 class SearchProxy(object):

@@ -12,20 +12,21 @@ __authors__ = ['"Hannah Dold" <hannah.dold@mailbox.tu-berlin.de>',
                '"Rike-Benjamin Schuppner" <rikebs@debilski.de>']
 
 
-class UnregisteredTypesError:
-    """Raised when there are types in the XML file which have not been imported / registered with mapper"""
-    def __init__(self, msg, *types):
-        self.types = types
+import base64
 
+from xml.etree import ElementTree as ET
+
+from xdapy.structures import Context, calculate_polymorphic_name
+from xdapy.errors import AmbiguousObjectError, InvalidInputError
+from xdapy.utils.algorithms import check_superfluous_keys
 
 import logging
 logger = logging.getLogger(__name__)
 
-from xml.etree import ElementTree as ET
-
-from xdapy.structures import Context, Data, calculate_polymorphic_name
-from xdapy.errors import AmbiguousObjectError, InvalidInputError
-from xdapy.utils.algorithms import check_superfluous_keys
+class UnregisteredTypesError:
+    """Raised when there are types in the XML file which have not been imported / registered with mapper"""
+    def __init__(self, msg, *types):
+        self.types = types
 
 
 class BinaryEncoder(object):
@@ -41,7 +42,6 @@ class BinaryEncoder(object):
 
 
 recode = {}
-import base64
 recode["base64"] = BinaryEncoder(base64.b64encode, base64.b64decode)
 recode["plain"] = BinaryEncoder(str.strip, str.strip)
 recode["ascii"] = recode["plain"]

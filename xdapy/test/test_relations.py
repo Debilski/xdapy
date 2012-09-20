@@ -104,10 +104,13 @@ class TestRelations(unittest.TestCase):
         print ""
         print obs_1.tree()
 
-        self.assertEqual(obs_1.tree(),
-            ("x- Observer(id=12, name=u'n1')\n"
+        self.assertTrue(
+            obs_1.tree() == ("x- Observer(id=12, name=u'n1')\n"
              "  +- belongs to Experiment(id=1, project=u'The Monorail Project')\n"
-             "  +- belongs to Experiment(id=8, project=u'Neptune Colonisation Project')\n"))
+             "  +- belongs to Experiment(id=8, project=u'Neptune Colonisation Project')\n")
+            or obs_1.tree() == ("x- Observer(id=12, name=u'n1')\n"
+            "  +- belongs to Experiment(id=8, project=u'Neptune Colonisation Project')\n"
+            "  +- belongs to Experiment(id=1, project=u'The Monorail Project')\n"))
 
         print ""
         print trial1_1.tree()

@@ -1,6 +1,13 @@
 Developer information
 =====================
 
+Participating
+-------------
+
+If you like to participate in the development of xdapy, just fork the main github repositoy (`github.com/xdapy/xdapy`_), commit your changes (the recommended way would be doing so in a feature branch using the commit markers mentioned below) and open a pull request on github.
+
+.. _github.com/xdapy/xdapy: https://github.com/xdapy/xdapy
+
 Publishing the documentation
 ----------------------------
 
